@@ -44,10 +44,28 @@
 <header><h1>مطعم سيف</h1><p>الزقازيق - الشرقية | 01205014931</p></header>
 <div class="cats">
   <button class="active" onclick="showCat('all',this)">الكل</button>
+  <button onclick="showCat('main',this)">مشويات</button>
   <button onclick="showCat('pizza',this)">بيتزا 🍕</button>
   <button onclick="showCat('burger',this)">برجر 🍔</button>
+  <button onclick="showCat('crepe',this)">كريب 🌯</button>
+  <button onclick="showCat('sand',this)">سندوتشات</button>
   <button onclick="showCat('sweets',this)">حلويات 🍰</button>
   <button onclick="showCat('drinks',this)">مشروبات 🥤</button>
+</div>
+
+<div class="sec" data-cat="main">
+  <h2>🔥 المشويات والأطباق الرئيسية</h2>
+  <div class="item"><div class="emoji">🍗</div><div class="info"><b>فراخ مشوية</b><span>فراخ على الفحم + عيش + سلطة + طحينة</span><div class="price">120 ج</div></div><button class="add" onclick="addItem('فراخ مشوية',120)">أضف +</button></div>
+  <div class="item"><div class="emoji">🥘</div><div class="info"><b>طاجن لحمة</b><span>لحمة بالخضار - طاجن سخن</span><div class="price">150 ج</div></div><button class="add" onclick="addItem('طاجن لحمة',150)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍢</div><div class="info"><b>كفتة مشوية</b><span>كفتة + طحينة + عيش</span><div class="price">130 ج</div></div><button class="add" onclick="addItem('كفتة مشوية',130)">أضف +</button></div>
+  <div class="item"><div class="emoji">🥩</div><div class="info"><b>ريش ضأن</b><span>ريش مشوية على الفحم</span><div class="price">180 ج</div></div><button class="add" onclick="addItem('ريش ضأن',180)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍝</div><div class="info"><b>مكرونة بالبشاميل</b><span>مكرونة - لحمة مفرومة - بشاميل</span><div class="price">90 ج</div></div><button class="add" onclick="addItem('مكرونة بالبشاميل',90)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍝</div><div class="info"><b>مكرونة نجرسكو</b><span>فراخ - مشروم - صوص كريمي</span><div class="price">100 ج</div></div><button class="add" onclick="addItem('مكرونة نجرسكو',100)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍚</div><div class="info"><b>فتة شاورما</b><span>رز - عيش محمص - شاورما - تومية</span><div class="price">110 ج</div></div><button class="add" onclick="addItem('فتة شاورما',110)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍗</div><div class="info"><b>فراخ كرسبي</b><span>4 قطع كرسبي + بطاطس + صوص</span><div class="price">115 ج</div></div><button class="add" onclick="addItem('فراخ كرسبي',115)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍢</div><div class="info"><b>شيش طاووق</b><span>شيش طاووق + رز + تومية</span><div class="price">125 ج</div></div><button class="add" onclick="addItem('شيش طاووق',125)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍟</div><div class="info"><b>استربس</b><span>6 قطع استربس + بطاطس + صوص</span><div class="price">110 ج</div></div><button class="add" onclick="addItem('استربس',110)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍟</div><div class="info"><b>بطاطس مقلية</b><span>بطاطس مقلية + كاتشب</span><div class="price">40 ج</div></div><button class="add" onclick="addItem('بطاطس مقلية',40)">أضف +</button></div>
 </div>
 
 <div class="sec" data-cat="pizza">
@@ -55,25 +73,71 @@
   <div class="item"><div class="emoji">🍕</div><div class="info"><b>بيتزا مارغريتا</b><span>صلصة - موتزاريلا - ريحان</span><div class="price">110 ج</div></div><button class="add" onclick="addItem('بيتزا مارغريتا',110)">أضف +</button></div>
   <div class="item"><div class="emoji">🍕</div><div class="info"><b>بيتزا خضار</b><span>فلفل - مشروم - زيتون - جبنة</span><div class="price">125 ج</div></div><button class="add" onclick="addItem('بيتزا خضار',125)">أضف +</button></div>
   <div class="item"><div class="emoji">🍕</div><div class="info"><b>بيتزا فراخ</b><span>فراخ - باربكيو - جبنة</span><div class="price">140 ج</div></div><button class="add" onclick="addItem('بيتزا فراخ',140)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍕</div><div class="info"><b>بيتزا سجق</b><span>سجق شرقي - فلفل - موتزاريلا</span><div class="price">135 ج</div></div><button class="add" onclick="addItem('بيتزا سجق',135)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍕</div><div class="info"><b>بيتزا ميكس جبن</b><span>موتزاريلا - شيدر - رومي - بارميزان</span><div class="price">145 ج</div></div><button class="add" onclick="addItem('بيتزا ميكس جبن',145)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍕</div><div class="info"><b>بيتزا سي فود</b><span>جمبري - سبيط - صوص طماطم</span><div class="price">170 ج</div></div><button class="add" onclick="addItem('بيتزا سي فود',170)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍕</div><div class="info"><b>بيتزا مشروم</b><span>مشروم - جبنة - صوص طماطم</span><div class="price">130 ج</div></div><button class="add" onclick="addItem('بيتزا مشروم',130)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍕</div><div class="info"><b>بيتزا رومي</b><span>جبنة رومي - موتزاريلا - فلفل</span><div class="price">135 ج</div></div><button class="add" onclick="addItem('بيتزا رومي',135)">أضف +</button></div>
 </div>
 
 <div class="sec" data-cat="burger">
   <h2>🍔 البرجر</h2>
   <div class="item"><div class="emoji">🍔</div><div class="info"><b>كلاسيك برجر</b><span>لحمة - جبنة - خس - طماطم</span><div class="price">95 ج</div></div><button class="add" onclick="addItem('كلاسيك برجر',95)">أضف +</button></div>
   <div class="item"><div class="emoji">🍔</div><div class="info"><b>دبل برجر</b><span>2 لحمة - دبل جبنة - صوص خاص</span><div class="price">140 ج</div></div><button class="add" onclick="addItem('دبل برجر',140)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍔</div><div class="info"><b>كرسبي برجر</b><span>فراخ كرسبي - جبنة - رانش</span><div class="price">105 ج</div></div><button class="add" onclick="addItem('كرسبي برجر',105)">أضف +</button></div>
   <div class="item"><div class="emoji">🍔</div><div class="info"><b>برجر باربكيو</b><span>لحمة - باربكيو - بصل مكرمل</span><div class="price">120 ج</div></div><button class="add" onclick="addItem('برجر باربكيو',120)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍔</div><div class="info"><b>برجر مشروم</b><span>لحمة - مشروم - صوص جبنة</span><div class="price">125 ج</div></div><button class="add" onclick="addItem('برجر مشروم',125)">أضف +</button></div>
+  <div class="item"><div class="emoji">🌶️</div><div class="info"><b>برجر حار</b><span>لحمة - هالبينو - صوص حار</span><div class="price">115 ج</div></div><button class="add" onclick="addItem('برجر حار',115)">أضف +</button></div>
+  <div class="item"><div class="emoji">🧀</div><div class="info"><b>دبل تشيز برجر</b><span>2 لحمة - 3 طبقات جبنة</span><div class="price">150 ج</div></div><button class="add" onclick="addItem('دبل تشيز برجر',150)">أضف +</button></div>
+</div>
+
+<div class="sec" data-cat="crepe">
+  <h2>🌯 الكريب</h2>
+  <div class="item"><div class="emoji">🌯</div><div class="info"><b>كريب فراخ</b><span>فراخ - جبنة - صوص</span><div class="price">85 ج</div></div><button class="add" onclick="addItem('كريب فراخ',85)">أضف +</button></div>
+  <div class="item"><div class="emoji">🌯</div><div class="info"><b>كريب شاورما</b><span>شاورما - تومية - مخلل</span><div class="price">90 ج</div></div><button class="add" onclick="addItem('كريب شاورما',90)">أضف +</button></div>
+  <div class="item"><div class="emoji">🧀</div><div class="info"><b>كريب ميكس جبن</b><span>موتزاريلا - شيدر - رومي</span><div class="price">75 ج</div></div><button class="add" onclick="addItem('كريب ميكس جبن',75)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍫</div><div class="info"><b>كريب نوتيلا</b><span>نوتيلا - موز - مكسرات</span><div class="price">70 ج</div></div><button class="add" onclick="addItem('كريب نوتيلا',70)">أضف +</button></div>
+  <div class="item"><div class="emoji">🌯</div><div class="info"><b>كريب سجق</b><span>سجق شرقي - جبنة - فلفل</span><div class="price">88 ج</div></div><button class="add" onclick="addItem('كريب سجق',88)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍟</div><div class="info"><b>كريب بطاطس</b><span>بطاطس - جبنة - كاتشب</span><div class="price">60 ج</div></div><button class="add" onclick="addItem('كريب بطاطس',60)">أضف +</button></div>
+</div>
+
+<div class="sec" data-cat="sand">
+  <h2>🥪 السندوتشات</h2>
+  <div class="item"><div class="emoji">🥙</div><div class="info"><b>شاورما فراخ</b><span>شاورما - تومية - خيار مخلل</span><div class="price">65 ج</div></div><button class="add" onclick="addItem('شاورما فراخ',65)">أضف +</button></div>
+  <div class="item"><div class="emoji">🥙</div><div class="info"><b>شاورما لحمة</b><span>شاورما لحمة - طحينة</span><div class="price">80 ج</div></div><button class="add" onclick="addItem('شاورما لحمة',80)">أضف +</button></div>
+  <div class="item"><div class="emoji">🥪</div><div class="info"><b>كبدة اسكندراني</b><span>كبدة - فلفل - ليمون</span><div class="price">55 ج</div></div><button class="add" onclick="addItem('كبدة اسكندراني',55)">أضف +</button></div>
+  <div class="item"><div class="emoji">🌭</div><div class="info"><b>سجق شرقي</b><span>سجق - فلفل - طحينة</span><div class="price">60 ج</div></div><button class="add" onclick="addItem('سجق شرقي',60)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍟</div><div class="info"><b>بطاطس سوري</b><span>بطاطس - تومية - كاتشب</span><div class="price">45 ج</div></div><button class="add" onclick="addItem('بطاطس سوري',45)">أضف +</button></div>
+  <div class="item"><div class="emoji">🧀</div><div class="info"><b>ساندوتش جبنة مقلية</b><span>جبنة مقلية - صوص - عيش</span><div class="price">55 ج</div></div><button class="add" onclick="addItem('ساندوتش جبنة مقلية',55)">أضف +</button></div>
 </div>
 
 <div class="sec" data-cat="sweets">
-  <h2>🍰 الحلويات</h2>
+  <h2>🍰 الحلويات - شرقي وغربي</h2>
+  <div class="item"><div class="emoji">🍮</div><div class="info"><b>كنافة نابلسية</b><span>كنافة بالجبنة النابلسية - سخنة</span><div class="price">85 ج</div></div><button class="add" onclick="addItem('كنافة نابلسية',85)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍮</div><div class="info"><b>أم علي</b><span>أم علي بالمكسرات والقشطة</span><div class="price">65 ج</div></div><button class="add" onclick="addItem('أم علي',65)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍮</div><div class="info"><b>كنافة بالقشطة</b><span>كنافة - قشطة بلدي - فستق</span><div class="price">75 ج</div></div><button class="add" onclick="addItem('كنافة بالقشطة',75)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍰</div><div class="info"><b>كيك شوكولاتة</b><span>كيك شوكولاتة - صوص شوكولاتة</span><div class="price">60 ج</div></div><button class="add" onclick="addItem('كيك شوكولاتة',60)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍰</div><div class="info"><b>تشيز كيك</b><span>تشيز كيك بالتوت</span><div class="price">70 ج</div></div><button class="add" onclick="addItem('تشيز كيك',70)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍮</div><div class="info"><b>بسبوسة</b><span>بسبوسة بالقشطة والمكسرات</span><div class="price">50 ج</div></div><button class="add" onclick="addItem('بسبوسة',50)">أضف +</button></div>
+  <div class="item"><div class="emoji">🥞</div><div class="info"><b>قطايف</b><span>قطايف بالقشطة - 4 قطع</span><div class="price">55 ج</div></div><button class="add" onclick="addItem('قطايف',55)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍚</div><div class="info"><b>رز بلبن</b><span>رز بلبن - مكسرات - قشطة</span><div class="price">40 ج</div></div><button class="add" onclick="addItem('رز بلبن',40)">أضف +</button></div>
   <div class="item"><div class="emoji">🍦</div><div class="info"><b>آيس كريم</b><span>3 بولات - شوكولاتة - فانيليا - فراولة</span><div class="price">45 ج</div></div><button class="add" onclick="addItem('آيس كريم',45)">أضف +</button></div>
+  <div class="item"><div class="emoji">🥐</div><div class="info"><b>جلاش</b><span>جلاش بالمكسرات والعسل</span><div class="price">48 ج</div></div><button class="add" onclick="addItem('جلاش',48)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍫</div><div class="info"><b>مولتن كيك</b><span>مولتن شوكولاتة سايحة</span><div class="price">75 ج</div></div><button class="add" onclick="addItem('مولتن كيك',75)">أضف +</button></div>
+  <div class="item"><div class="emoji">🧇</div><div class="info"><b>وافل</b><span>وافل - نوتيلا - فواكه</span><div class="price">65 ج</div></div><button class="add" onclick="addItem('وافل',65)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍩</div><div class="info"><b>دوناتس</b><span>3 قطع دوناتس مشكلة</span><div class="price">55 ج</div></div><button class="add" onclick="addItem('دوناتس',55)">أضف +</button></div>
 </div>
 
 <div class="sec" data-cat="drinks">
   <h2>🥤 المشروبات</h2>
   <div class="item"><div class="emoji">🥤</div><div class="info"><b>بيبسي</b><span>كانز ساقع</span><div class="price">25 ج</div></div><button class="add" onclick="addItem('بيبسي',25)">أضف +</button></div>
+  <div class="item"><div class="emoji">🥭</div><div class="info"><b>عصير مانجو</b><span>مانجو فريش</span><div class="price">35 ج</div></div><button class="add" onclick="addItem('عصير مانجو',35)">أضف +</button></div>
   <div class="item"><div class="emoji">🍊</div><div class="info"><b>عصير برتقال</b><span>برتقال فريش</span><div class="price">30 ج</div></div><button class="add" onclick="addItem('عصير برتقال',30)">أضف +</button></div>
   <div class="item"><div class="emoji">🥛</div><div class="info"><b>ميلك شيك</b><span>ميلك شيك شوكولاتة</span><div class="price">50 ج</div></div><button class="add" onclick="addItem('ميلك شيك',50)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍈</div><div class="info"><b>عصير جوافة</b><span>جوافة فريش</span><div class="price">35 ج</div></div><button class="add" onclick="addItem('عصير جوافة',35)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍓</div><div class="info"><b>عصير فراولة</b><span>فراولة فريش</span><div class="price">35 ج</div></div><button class="add" onclick="addItem('عصير فراولة',35)">أضف +</button></div>
+  <div class="item"><div class="emoji">☕</div><div class="info"><b>قهوة تركي</b><span>قهوة تركي مظبوطة</span><div class="price">25 ج</div></div><button class="add" onclick="addItem('قهوة تركي',25)">أضف +</button></div>
+  <div class="item"><div class="emoji">☕</div><div class="info"><b>نسكافيه</b><span>نسكافيه باللبن</span><div class="price">30 ج</div></div><button class="add" onclick="addItem('نسكافيه',30)">أضف +</button></div>
 </div>
 
 <div class="bottom-bar">
