@@ -177,7 +177,7 @@
 </div>
 <div class="cart-bar"><div>🛒 السلة: <b id="count">0</b> | الإجمالي: <b id="total">0</b> ج <span id="finalTotal" style="color:#25D366"></span></div><button onclick="openForm()">اطلب الآن</button></div>
 <div class="overlay" id="overlay"><div class="form-box"><h3>📝 بيانات التوصيل</h3><p>لازم تكتب بياناتك عشان نوصلك الأوردر</p><div id="orderSummary" style="background:#fff3f3;padding:10px;border-radius:10px;font-size:13px;margin-bottom:5px"></div><label>الاسم بالكامل *</label><input id="cName" placeholder="اكتب اسمك هنا..."><label>رقم الموبايل *</label><input id="cPhone" type="tel" placeholder="01xxxxxxxxx"><label>العنوان بالتفصيل *</label><textarea id="cAddress" placeholder="الزقازيق - الشارع - رقم العمارة - الدور..."></textarea><button class="send-btn" onclick="sendOrder()">تأكيد وإرسال على واتساب ✅</button><button class="close-btn" onclick="closeForm()">إلغاء</button></div></div>
-<div class="overlay" id="waOverlay"><div class="form-box"><h3>💬 أهلاً بيك في مطعم سيف</h3><p>اختار انت عايز إيه واحنا هنرد عليك على طول</p><button class="wa-opt" onclick="sendWA('عايز اطلب أوردر من مطعم سيف لو سمحت 🍽️')">🍽️ عايز اطلب أوردر<span>ابعت طلبك وهنجهزهولك على طول</span></button><button class="wa-opt" onclick="sendWA('ممكن اعرف عروض النهاردة في مطعم سيف؟ 🎉')">🎉 عايز اعرف عروض النهاردة<span>شوف عروض وخصومات النهاردة</span></button><button class="wa-opt" onclick="sendWA('ممكن المنيو كامل لو سمحت؟ 📋')">📋 عايز المنيو كامل<span>هنبعتلك المنيو كله بالأسعار</span></button><button class="wa-opt" onclick="sendWA('عايز استفسر عن حاجة في مطعم سيف ❓')">❓ عندي استفسار<span>اسألنا على أي حاجة</span></button><button class="wa-opt" onclick="sendWA('عايز اعرف مكان مطعم سيف وفين التوصيل؟ 📍')">📍 مكان المطعم والتوصيل<span>العنوان وأماكن التوصيل</span></button><button class="close-btn" onclick="closeWAChat()">إلغاء</button></div></div>
+<div class="overlay" id="waOverlay"><div class="form-box"><h3>💬 أهلاً بيك في مطعم سيف</h3><p>اختار انت عايز إيه واحنا هنرد عليك على طول</p><button class="wa-opt" onclick="sendWA('🍽️ عايز اطلب أوردر من مطعم سيف لو سمحت')">🍽️ عايز اطلب أوردر<span>ابعت طلبك وهنجهزهولك على طول</span></button><button class="wa-opt" onclick="sendWA('🎉 ممكن اعرف عروض النهاردة في مطعم سيف؟')">🎉 عايز اعرف عروض النهاردة<span>شوف عروض وخصومات النهاردة</span></button><button class="wa-opt" onclick="sendWA('📋 ممكن المنيو كامل لو سمحت؟')">📋 عايز المنيو كامل<span>هنبعتلك المنيو كله بالأسعار</span></button><button class="wa-opt" onclick="sendWA('❓ عندي استفسار عن مطعم سيف')">❓ عندي استفسار<span>اسألنا على أي حاجة</span></button><button class="wa-opt" onclick="sendWA('📍 عايز اعرف مكان مطعم سيف وفين التوصيل؟')">📍 مكان المطعم والتوصيل<span>العنوان وأماكن التوصيل</span></button><button class="close-btn" onclick="closeWAChat()">إلغاء</button></div></div>
 <script>
 let cart=[];let total=0;
 let discountPercent=0;
@@ -279,11 +279,13 @@ function sendOrder(){
   if(phone==''||phone.length<10){alert('اكتب رقم موبايلك صح');return;}
   if(address==''){alert('اكتب عنوانك بالتفصيل');return;}
   let final=getFinalTotal();
-  let msg='🍽️ طلب جديد من مطعم سيف\n\n👤 الاسم: '+name+'\n📞 رقم العميل: '+phone+'\n📍 العنوان: '+address+'\n\n🛒 الطلب:\n'+cart.join('\n')+'\n\n💰 الإجمالي: '+total+' ج';
+  let itemsList=cart.map(i=>'▪️ '+i).join('\n');
+  let msg='🍽️ *طلب جديد من مطعم سيف*\n\n👤 *الاسم:* '+name+'\n📞 *رقم العميل:* '+phone+'\n📍 *العنوان:* '+address+'\n\n🛒 *الطلب:*\n'+itemsList+'\n\n💰 *الإجمالي:* '+total+' ج';
   if(discountPercent>0){
     let save=total-final;
-    msg+='\n🎉 الخصم: '+discountPercent+'% - '+save+' ج\n💰 الإجمالي بعد الخصم: '+final+' ج';
+    msg+='\n🎉 *الخصم:* '+discountPercent+'% - '+save+' ج\n✅ *الإجمالي بعد الخصم:* '+final+' ج';
   }
+  msg+='\n\n🙏 شكراً لاختيارك مطعم سيف ❤️';
   window.open('https://wa.me/201205014931?text='+encodeURIComponent(msg),'_blank');
 }
 function openWAChat(){document.getElementById('waOverlay').classList.add('show');}
