@@ -131,20 +131,40 @@ cart.forEach(i=>{total+=i.price;items+="- "+i.name+" : "+i.price+" ج%0A";});
 let msg="طلب جديد من مطعم سيف 🍔%0A📍 المحطة - الزقازيق%0A📞 01205014931%0A%0A"+items+"%0Aالمجموع: "+total+" ج%0Aالتوصيل: "+delivery+" ج%0Aالإجمالي: "+(total+delivery)+" ج%0A%0Aالاسم: "+name+"%0Aالتليفون: "+phone+"%0Aالعنوان: "+address;
 window.open("https://wa.me/201205014931?text="+msg,"_blank");
 }
-updateCart();
-</script>
-
-
-
 <style>
-  .fixed-qr, .fixed-wa{
+  .bottom-fixed-bar{
     position:fixed !important;
+    bottom:70px !important;
+    left:10px !important;
+    right:10px !important;
     transform: translate3d(0,0,0) !important;
     -webkit-transform: translate3d(0,0,0) !important;
-    backface-visibility:hidden;
-    will-change: transform;
+    z-index:99999 !important;
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 -2px 15px rgba(0,0,0,0.25);
+    padding:8px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
   }
 </style>
+
+<div class="bottom-fixed-bar">
+  <div style="display:flex; align-items:center; gap:6px;">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://seif77-cloud.github.io/seif_resturant/" style="width:48px; height:48px; border-radius:8px;">
+    <div style="line-height:1.2;">
+      <div style="font-size:12px; font-weight:bold;">اطلب بالـ QR 📱</div>
+      <div style="font-size:11px; color:#666;">امسح الكود واطلب</div>
+    </div>
+  </div>
+
+  <a href="https://wa.me/201205014931?text=عايز اطلب من مطعم سيف" target="_blank" style="background:#25D366; color:#fff; height:44px; padding:0 14px; border-radius:25px; display:flex; align-items:center; gap:6px; text-decoration:none; font-weight:bold; font-size:14px; white-space:nowrap;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:24px; height:24px; background:#fff; border-radius:50%; padding:2px;">
+    اطلب واتساب
+  </a>
+</div>
 
 <div class="fixed-qr" style="top:140px; left:10px; background:#fff; padding:8px; border-radius:15px; box-shadow:0 4px 15px rgba(0,0,0,0.3); text-align:center; z-index:99999; width:105px;">
   <p style="margin:0 0 5px 0; font-size:12px; font-weight:bold;">اطلب بالـ QR 📱</p>
