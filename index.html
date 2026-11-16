@@ -23,13 +23,12 @@
   .price{font-weight:bold;color:#d92b2b;margin-top:3px}
   .add{background:#d92b2b;color:#fff;border:0;padding:10px 16px;border-radius:20px;cursor:pointer;font-weight:bold;font-size:15px}
   .bottom-bar{position:fixed;bottom:66px;left:10px;right:10px;z-index:9999;background:#fff;border-radius:18px;box-shadow:0 2px 15px rgba(0,0,0,.25);padding:8px;display:flex;align-items:center;justify-content:space-between;gap:8px}
-  .wa-btn{background:#25D366;color:#fff;height:44px;padding:0 14px;border-radius:25px;display:flex;align-items:center;gap:6px;font-weight:bold;font-size:14px;border:0;cursor:pointer;text-decoration:none}
+  .wa-btn{background:#25D366;color:#fff;height:44px;padding:0 14px;border-radius:25px;display:flex;align-items:center;gap:6px;font-weight:bold;font-size:14px;border:0;cursor:pointer}
   .cart-bar{position:fixed;bottom:0;left:0;right:0;z-index:10000;background:#111;color:#fff;padding:12px;display:flex;justify-content:space-between;align-items:center}
   .cart-bar button{background:#25D366;border:0;color:#fff;padding:10px 18px;border-radius:20px;font-weight:bold;cursor:pointer}
-  /* نافذة بيانات العميل */
   .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:20000;align-items:flex-end;justify-content:center}
   .overlay.show{display:flex}
-  .form-box{background:#fff;width:100%;max-width:480px;border-radius:20px 20px 0 0;padding:18px;padding-bottom:25px}
+  .form-box{background:#fff;width:100%;max-width:480px;border-radius:20px 20px 0 0;padding:18px;padding-bottom:25px;max-height:90vh;overflow-y:auto}
   .form-box h3{margin:0 0 5px;text-align:center}
   .form-box p{margin:0 0 12px;text-align:center;color:#666;font-size:13px}
   .form-box label{font-size:13px;font-weight:bold;display:block;margin:10px 0 4px}
@@ -37,6 +36,8 @@
   .form-box textarea{height:60px;resize:none}
   .send-btn{width:100%;background:#25D366;color:#fff;border:0;padding:14px;border-radius:15px;font-weight:bold;font-size:16px;margin-top:14px;cursor:pointer}
   .close-btn{width:100%;background:#eee;border:0;padding:12px;border-radius:15px;margin-top:8px;cursor:pointer}
+  .wa-opt{width:100%;text-align:right;background:#f0fff4;border:1px solid #c8f0d0;padding:13px;border-radius:12px;margin-bottom:8px;cursor:pointer;font-size:15px;font-weight:bold}
+  .wa-opt span{color:#666;font-size:12px;display:block;font-weight:normal}
 </style>
 </head>
 <body>
@@ -48,49 +49,84 @@
 
 <div class="cats">
   <button class="active" onclick="showCat('all',this)">الكل</button>
-  <button onclick="showCat('main',this)">أطباق رئيسية</button>
+  <button onclick="showCat('main',this)">مشويات</button>
   <button onclick="showCat('pizza',this)">بيتزا 🍕</button>
   <button onclick="showCat('burger',this)">برجر 🍔</button>
   <button onclick="showCat('crepe',this)">كريب 🌯</button>
+  <button onclick="showCat('sand',this)">سندوتشات</button>
   <button onclick="showCat('sweets',this)">حلويات 🍰</button>
+  <button onclick="showCat('drinks',this)">مشروبات 🥤</button>
 </div>
 
 <div class="sec" data-cat="main">
-  <h2>🍽️ الأطباق الرئيسية</h2>
-  <div class="item"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=200"><div class="info"><b>فراخ مشوية</b><span>فراخ مشوية على الفحم + عيش + سلطة</span><div class="price">120 ج</div></div><button class="add" onclick="addItem('فراخ مشوية',120)">أضف +</button></div>
+  <h2>🔥 المشويات والأطباق الرئيسية</h2>
+  <div class="item"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=200"><div class="info"><b>فراخ مشوية</b><span>فراخ على الفحم + عيش + سلطة + طحينة</span><div class="price">120 ج</div></div><button class="add" onclick="addItem('فراخ مشوية',120)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=200"><div class="info"><b>طاجن لحمة</b><span>لحمة بالخضار - طاجن سخن</span><div class="price">150 ج</div></div><button class="add" onclick="addItem('طاجن لحمة',150)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=200"><div class="info"><b>كفتة مشوية</b><span>كفتة + طحينة + عيش</span><div class="price">130 ج</div></div><button class="add" onclick="addItem('كفتة مشوية',130)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=200"><div class="info"><b>ريش ضأن</b><span>ريش مشوية على الفحم</span><div class="price">180 ج</div></div><button class="add" onclick="addItem('ريش ضأن',180)">أضف +</button></div>
   <div class="item"><img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=200"><div class="info"><b>مكرونة بالبشاميل</b><span>مكرونة - لحمة مفرومة - بشاميل</span><div class="price">90 ج</div></div><button class="add" onclick="addItem('مكرونة بالبشاميل',90)">أضف +</button></div>
-  <div class="item"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=200"><div class="info"><b>طاجن لحمة</b><span>طاجن لحمة بالخضار</span><div class="price">150 ج</div></div><button class="add" onclick="addItem('طاجن لحمة',150)">أضف +</button></div>
-  <div class="item"><img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=200"><div class="info"><b>كفتة مشوية</b><span>كفتة مشوية + طحينة + عيش</span><div class="price">130 ج</div></div><button class="add" onclick="addItem('كفتة مشوية',130)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=200"><div class="info"><b>مكرونة نجرسكو</b><span>فراخ - مشروم - صوص كريمي</span><div class="price">100 ج</div></div><button class="add" onclick="addItem('مكرونة نجرسكو',100)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=200"><div class="info"><b>فتة شاورما</b><span>رز - عيش محمص - شاورما - تومية</span><div class="price">110 ج</div></div><button class="add" onclick="addItem('فتة شاورما',110)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=200"><div class="info"><b>فراخ كرسبي</b><span>4 قطع كرسبي + بطاطس + صوص</span><div class="price">115 ج</div></div><button class="add" onclick="addItem('فراخ كرسبي',115)">أضف +</button></div>
 </div>
 
 <div class="sec" data-cat="pizza">
   <h2>🍕 البيتزا</h2>
   <div class="item"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200"><div class="info"><b>بيتزا مارغريتا</b><span>صلصة - موتزاريلا - ريحان</span><div class="price">110 ج</div></div><button class="add" onclick="addItem('بيتزا مارغريتا',110)">أضف +</button></div>
   <div class="item"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200"><div class="info"><b>بيتزا خضار</b><span>فلفل - مشروم - زيتون - جبنة</span><div class="price">125 ج</div></div><button class="add" onclick="addItem('بيتزا خضار',125)">أضف +</button></div>
-  <div class="item"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=200"><div class="info"><b>بيتزا فراخ</b><span>فراخ مشوية - صوص باربكيو - جبنة</span><div class="price">140 ج</div></div><button class="add" onclick="addItem('بيتزا فراخ',140)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=200"><div class="info"><b>بيتزا فراخ</b><span>فراخ - باربكيو - جبنة</span><div class="price">140 ج</div></div><button class="add" onclick="addItem('بيتزا فراخ',140)">أضف +</button></div>
   <div class="item"><img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=200"><div class="info"><b>بيتزا سجق</b><span>سجق شرقي - فلفل - موتزاريلا</span><div class="price">135 ج</div></div><button class="add" onclick="addItem('بيتزا سجق',135)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=200"><div class="info"><b>بيتزا ميكس جبن</b><span>موتزاريلا - شيدر - رومي - بارميزان</span><div class="price">145 ج</div></div><button class="add" onclick="addItem('بيتزا ميكس جبن',145)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1595855759920-865823967c41?w=200"><div class="info"><b>بيتزا سي فود</b><span>جمبري - سبيط - صوص طماطم</span><div class="price">170 ج</div></div><button class="add" onclick="addItem('بيتزا سي فود',170)">أضف +</button></div>
 </div>
 
 <div class="sec" data-cat="burger">
   <h2>🍔 البرجر</h2>
-  <div class="item"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200"><div class="info"><b>كلاسيك برجر</b><span>لحمة - جبنة - خس - طماطم - صوص</span><div class="price">95 ج</div></div><button class="add" onclick="addItem('كلاسيك برجر',95)">أضف +</button></div>
-  <div class="item"><img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=200"><div class="info"><b>دبل برجر</b><span>2 قطعة لحمة - دبل جبنة - صوص خاص</span><div class="price">140 ج</div></div><button class="add" onclick="addItem('دبل برجر',140)">أضف +</button></div>
-  <div class="item"><img src="https://images.unsplash.com/photo-1603064752734-4c48eff53d05?w=200"><div class="info"><b>كرسبي برجر</b><span>فراخ كرسبي - جبنة - صوص رانش</span><div class="price">105 ج</div></div><button class="add" onclick="addItem('كرسبي برجر',105)">أضف +</button></div>
-  <div class="item"><img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=200"><div class="info"><b>برجر باربكيو</b><span>لحمة - صوص باربكيو - بصل مكرمل</span><div class="price">120 ج</div></div><button class="add" onclick="addItem('برجر باربكيو',120)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200"><div class="info"><b>كلاسيك برجر</b><span>لحمة - جبنة - خس - طماطم</span><div class="price">95 ج</div></div><button class="add" onclick="addItem('كلاسيك برجر',95)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=200"><div class="info"><b>دبل برجر</b><span>2 لحمة - دبل جبنة - صوص خاص</span><div class="price">140 ج</div></div><button class="add" onclick="addItem('دبل برجر',140)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1603064752734-4c48eff53d05?w=200"><div class="info"><b>كرسبي برجر</b><span>فراخ كرسبي - جبنة - رانش</span><div class="price">105 ج</div></div><button class="add" onclick="addItem('كرسبي برجر',105)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=200"><div class="info"><b>برجر باربكيو</b><span>لحمة - باربكيو - بصل مكرمل</span><div class="price">120 ج</div></div><button class="add" onclick="addItem('برجر باربكيو',120)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=200"><div class="info"><b>برجر مشروم</b><span>لحمة - مشروم - صوص جبنة</span><div class="price">125 ج</div></div><button class="add" onclick="addItem('برجر مشروم',125)">أضف +</button></div>
 </div>
 
 <div class="sec" data-cat="crepe">
   <h2>🌯 الكريب</h2>
-  <div class="item"><img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=200"><div class="info"><b>كريب فراخ</b><span>فراخ - جبنة - صوص - خضار</span><div class="price">85 ج</div></div><button class="add" onclick="addItem('كريب فراخ',85)">أضف +</button></div>
-  <div class="item"><img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=200"><div class="info"><b>كريب شاورما</b><span>شاورما فراخ - تومية - خيار مخلل</span><div class="price">90 ج</div></div><button class="add" onclick="addItem('كريب شاورما',90)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=200"><div class="info"><b>كريب فراخ</b><span>فراخ - جبنة - صوص</span><div class="price">85 ج</div></div><button class="add" onclick="addItem('كريب فراخ',85)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=200"><div class="info"><b>كريب شاورما</b><span>شاورما - تومية - مخلل</span><div class="price">90 ج</div></div><button class="add" onclick="addItem('كريب شاورما',90)">أضف +</button></div>
   <div class="item"><img src="https://images.unsplash.com/photo-1610508500445-a4592435e27e?w=200"><div class="info"><b>كريب ميكس جبن</b><span>موتزاريلا - شيدر - رومي</span><div class="price">75 ج</div></div><button class="add" onclick="addItem('كريب ميكس جبن',75)">أضف +</button></div>
   <div class="item"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=200"><div class="info"><b>كريب نوتيلا</b><span>نوتيلا - موز - مكسرات</span><div class="price">70 ج</div></div><button class="add" onclick="addItem('كريب نوتيلا',70)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=200"><div class="info"><b>كريب سجق</b><span>سجق شرقي - جبنة - فلفل</span><div class="price">88 ج</div></div><button class="add" onclick="addItem('كريب سجق',88)">أضف +</button></div>
+</div>
+
+<div class="sec" data-cat="sand">
+  <h2>🥪 السندوتشات</h2>
+  <div class="item"><img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=200"><div class="info"><b>شاورما فراخ</b><span>شاورما - تومية - خيار مخلل</span><div class="price">65 ج</div></div><button class="add" onclick="addItem('شاورما فراخ',65)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=200"><div class="info"><b>شاورما لحمة</b><span>شاورما لحمة - طحينة</span><div class="price">80 ج</div></div><button class="add" onclick="addItem('شاورما لحمة',80)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=200"><div class="info"><b>كبدة اسكندراني</b><span>كبدة - فلفل - ليمون</span><div class="price">55 ج</div></div><button class="add" onclick="addItem('كبدة اسكندراني',55)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1606755456206-b25206cde27e?w=200"><div class="info"><b>سجق شرقي</b><span>سجق - فلفل - طحينة</span><div class="price">60 ج</div></div><button class="add" onclick="addItem('سجق شرقي',60)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=200"><div class="info"><b>بطاطس سوري</b><span>بطاطس - تومية - كاتشب</span><div class="price">45 ج</div></div><button class="add" onclick="addItem('بطاطس سوري',45)">أضف +</button></div>
 </div>
 
 <div class="sec" data-cat="sweets">
-  <h2>🍰 الحلويات</h2>
+  <h2>🍰 الحلويات - شرقي وغربي</h2>
   <div class="item"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=200"><div class="info"><b>كنافة نابلسية</b><span>كنافة بالجبنة النابلسية - سخنة</span><div class="price">85 ج</div></div><button class="add" onclick="addItem('كنافة نابلسية',85)">أضف +</button></div>
   <div class="item"><img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=200"><div class="info"><b>أم علي</b><span>أم علي بالمكسرات والقشطة</span><div class="price">65 ج</div></div><button class="add" onclick="addItem('أم علي',65)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=200"><div class="info"><b>كنافة بالقشطة</b><span>كنافة - قشطة بلدي - فستق</span><div class="price">75 ج</div></div><button class="add" onclick="addItem('كنافة بالقشطة',75)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=200"><div class="info"><b>كيك شوكولاتة</b><span>كيك شوكولاتة - صوص شوكولاتة</span><div class="price">60 ج</div></div><button class="add" onclick="addItem('كيك شوكولاتة',60)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=200"><div class="info"><b>تشيز كيك</b><span>تشيز كيك بالتوت</span><div class="price">70 ج</div></div><button class="add" onclick="addItem('تشيز كيك',70)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=200"><div class="info"><b>بسبوسة</b><span>بسبوسة بالقشطة والمكسرات</span><div class="price">50 ج</div></div><button class="add" onclick="addItem('بسبوسة',50)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=200"><div class="info"><b>قطايف</b><span>قطايف بالقشطة - 4 قطع</span><div class="price">55 ج</div></div><button class="add" onclick="addItem('قطايف',55)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=200"><div class="info"><b>رز بلبن</b><span>رز بلبن - مكسرات - قشطة</span><div class="price">40 ج</div></div><button class="add" onclick="addItem('رز بلبن',40)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=200"><div class="info"><b>آيس كريم</b><span>3 بولات - شوكولاتة - فانيليا - فراولة</span><div class="price">45 ج</div></div><button class="add" onclick="addItem('آيس كريم',45)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=200"><div class="info"><b>جلاش</b><span>جلاش بالمكسرات والعسل</span><div class="price">48 ج</div></div><button class="add" onclick="addItem('جلاش',48)">أضف +</button></div>
+</div>
+
+<div class="sec" data-cat="drinks">
+  <h2>🥤 المشروبات</h2>
+  <div class="item"><img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?w=200"><div class="info"><b>بيبسي</b><span>كانز ساقع</span><div class="price">25 ج</div></div><button class="add" onclick="addItem('بيبسي',25)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=200"><div class="info"><b>عصير مانجو</b><span>مانجو فريش</span><div class="price">35 ج</div></div><button class="add" onclick="addItem('عصير مانجو',35)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=200"><div class="info"><b>عصير برتقال</b><span>برتقال فريش</span><div class="price">30 ج</div></div><button class="add" onclick="addItem('عصير برتقال',30)">أضف +</button></div>
+  <div class="item"><img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=200"><div class="info"><b>ميلك شيك</b><span>ميلك شيك شوكولاتة</span><div class="price">50 ج</div></div><button class="add" onclick="addItem('ميلك شيك',50)">أضف +</button></div>
 </div>
 
 <!-- QR + واتساب -->
@@ -99,7 +135,7 @@
     <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://seif77-cloud.github.io/seif_resturant/" style="width:48px;height:48px;border-radius:8px">
     <div style="line-height:1.2"><div style="font-size:12px;font-weight:bold">اطلب بالـ QR 📱</div><div style="font-size:11px;color:#666">امسح الكود واطلب</div></div>
   </div>
-  <a class="wa-btn" href="https://wa.me/201205014931" target="_blank">واتساب 💬</a>
+  <button class="wa-btn" onclick="openWAChat()">واتساب 💬</button>
 </div>
 
 <div class="cart-bar">
@@ -124,6 +160,20 @@
   </div>
 </div>
 
+<!-- نافذة الواتساب زي المطاعم -->
+<div class="overlay" id="waOverlay">
+  <div class="form-box">
+    <h3>💬 أهلاً بيك في مطعم سيف</h3>
+    <p>اختار انت عايز إيه واحنا هنرد عليك على طول</p>
+    <button class="wa-opt" onclick="sendWA('عايز اطلب أوردر من مطعم سيف لو سمحت 🍽️')">🍽️ عايز اطلب أوردر<span>ابعت طلبك وهنجهزهولك على طول</span></button>
+    <button class="wa-opt" onclick="sendWA('ممكن اعرف عروض النهاردة في مطعم سيف؟ 🎉')">🎉 عايز اعرف عروض النهاردة<span>شوف عروض وخصومات النهاردة</span></button>
+    <button class="wa-opt" onclick="sendWA('ممكن المنيو كامل لو سمحت؟ 📋')">📋 عايز المنيو كامل<span>هنبعتلك المنيو كله بالأسعار</span></button>
+    <button class="wa-opt" onclick="sendWA('عايز استفسر عن حاجة في مطعم سيف ❓')">❓ عندي استفسار<span>اسألنا على أي حاجة</span></button>
+    <button class="wa-opt" onclick="sendWA('عايز اعرف مكان مطعم سيف وفين التوصيل؟ 📍')">📍 مكان المطعم والتوصيل<span>العنوان وأماكن التوصيل</span></button>
+    <button class="close-btn" onclick="closeWAChat()">إلغاء</button>
+  </div>
+</div>
+
 <script>
 let cart = [];
 let total = 0;
@@ -145,9 +195,7 @@ function openForm(){
   document.getElementById('orderSummary').innerHTML = 'طلبك:<br>' + cart.join('<br>') + '<br><b>الإجمالي: ' + total + ' ج</b>';
   document.getElementById('overlay').classList.add('show');
 }
-function closeForm(){
-  document.getElementById('overlay').classList.remove('show');
-}
+function closeForm(){ document.getElementById('overlay').classList.remove('show'); }
 function sendOrder(){
   let name = document.getElementById('cName').value.trim();
   let phone = document.getElementById('cPhone').value.trim();
@@ -158,6 +206,9 @@ function sendOrder(){
   let msg = 'طلب جديد من مطعم سيف 🍽️\n\n👤 الاسم: ' + name + '\n📞 رقم العميل: ' + phone + '\n📍 العنوان: ' + address + '\n\n🛒 الطلب:\n' + cart.join('\n') + '\n\n💰 الإجمالي: ' + total + ' ج';
   window.open('https://wa.me/201205014931?text=' + encodeURIComponent(msg), '_blank');
 }
+function openWAChat(){ document.getElementById('waOverlay').classList.add('show'); }
+function closeWAChat(){ document.getElementById('waOverlay').classList.remove('show'); }
+function sendWA(text){ window.open('https://wa.me/201205014931?text=' + encodeURIComponent(text), '_blank'); }
 </script>
 </body>
 </html>
