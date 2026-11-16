@@ -16,7 +16,7 @@
   .sec{margin:12px}
   .sec h2{background:#d92b2b;color:#fff;padding:10px;border-radius:10px;font-size:17px;margin:0 0 10px;text-align:center}
   .item{background:#fff;border-radius:12px;padding:10px;display:flex;gap:10px;align-items:center;margin-bottom:10px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
-  .item img{width:75px;height:75px;object-fit:cover;border-radius:10px}
+  .emoji{width:60px;height:60px;background:#fff3f3;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0}
   .item .info{flex:1}
   .item .info b{font-size:16px}
   .item .info span{color:#666;font-size:13px;display:block}
@@ -52,28 +52,28 @@
 
 <div class="sec" data-cat="pizza">
   <h2>🍕 البيتزا</h2>
-  <div class="item"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=200"><div class="info"><b>بيتزا مارغريتا</b><span>صلصة - موتزاريلا - ريحان</span><div class="price">110 ج</div></div><button class="add" onclick="addItem('بيتزا مارغريتا',110)">أضف +</button></div>
-  <div class="item"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200"><div class="info"><b>بيتزا خضار</b><span>فلفل - مشروم - زيتون - جبنة</span><div class="price">125 ج</div></div><button class="add" onclick="addItem('بيتزا خضار',125)">أضف +</button></div>
-  <div class="item"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200"><div class="info"><b>بيتزا فراخ</b><span>فراخ - باربكيو - جبنة</span><div class="price">140 ج</div></div><button class="add" onclick="addItem('بيتزا فراخ',140)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍕</div><div class="info"><b>بيتزا مارغريتا</b><span>صلصة - موتزاريلا - ريحان</span><div class="price">110 ج</div></div><button class="add" onclick="addItem('بيتزا مارغريتا',110)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍕</div><div class="info"><b>بيتزا خضار</b><span>فلفل - مشروم - زيتون - جبنة</span><div class="price">125 ج</div></div><button class="add" onclick="addItem('بيتزا خضار',125)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍕</div><div class="info"><b>بيتزا فراخ</b><span>فراخ - باربكيو - جبنة</span><div class="price">140 ج</div></div><button class="add" onclick="addItem('بيتزا فراخ',140)">أضف +</button></div>
 </div>
 
 <div class="sec" data-cat="burger">
   <h2>🍔 البرجر</h2>
-  <div class="item"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200"><div class="info"><b>كلاسيك برجر</b><span>لحمة - جبنة - خس - طماطم</span><div class="price">95 ج</div></div><button class="add" onclick="addItem('كلاسيك برجر',95)">أضف +</button></div>
-  <div class="item"><img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=200"><div class="info"><b>دبل برجر</b><span>2 لحمة - دبل جبنة - صوص خاص</span><div class="price">140 ج</div></div><button class="add" onclick="addItem('دبل برجر',140)">أضف +</button></div>
-  <div class="item"><img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=200"><div class="info"><b>برجر باربكيو</b><span>لحمة - باربكيو - بصل مكرمل</span><div class="price">120 ج</div></div><button class="add" onclick="addItem('برجر باربكيو',120)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍔</div><div class="info"><b>كلاسيك برجر</b><span>لحمة - جبنة - خس - طماطم</span><div class="price">95 ج</div></div><button class="add" onclick="addItem('كلاسيك برجر',95)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍔</div><div class="info"><b>دبل برجر</b><span>2 لحمة - دبل جبنة - صوص خاص</span><div class="price">140 ج</div></div><button class="add" onclick="addItem('دبل برجر',140)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍔</div><div class="info"><b>برجر باربكيو</b><span>لحمة - باربكيو - بصل مكرمل</span><div class="price">120 ج</div></div><button class="add" onclick="addItem('برجر باربكيو',120)">أضف +</button></div>
 </div>
 
 <div class="sec" data-cat="sweets">
   <h2>🍰 الحلويات</h2>
-  <div class="item"><img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=200"><div class="info"><b>آيس كريم</b><span>3 بولات - شوكولاتة - فانيليا - فراولة</span><div class="price">45 ج</div></div><button class="add" onclick="addItem('آيس كريم',45)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍦</div><div class="info"><b>آيس كريم</b><span>3 بولات - شوكولاتة - فانيليا - فراولة</span><div class="price">45 ج</div></div><button class="add" onclick="addItem('آيس كريم',45)">أضف +</button></div>
 </div>
 
 <div class="sec" data-cat="drinks">
   <h2>🥤 المشروبات</h2>
-  <div class="item"><img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?w=200"><div class="info"><b>بيبسي</b><span>كانز ساقع</span><div class="price">25 ج</div></div><button class="add" onclick="addItem('بيبسي',25)">أضف +</button></div>
-  <div class="item"><img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=200"><div class="info"><b>عصير برتقال</b><span>برتقال فريش</span><div class="price">30 ج</div></div><button class="add" onclick="addItem('عصير برتقال',30)">أضف +</button></div>
-  <div class="item"><img src="https://images.unsplash.com/photo-1577805947697-89e18249d767?w=200"><div class="info"><b>ميلك شيك</b><span>ميلك شيك شوكولاتة</span><div class="price">50 ج</div></div><button class="add" onclick="addItem('ميلك شيك',50)">أضف +</button></div>
+  <div class="item"><div class="emoji">🥤</div><div class="info"><b>بيبسي</b><span>كانز ساقع</span><div class="price">25 ج</div></div><button class="add" onclick="addItem('بيبسي',25)">أضف +</button></div>
+  <div class="item"><div class="emoji">🍊</div><div class="info"><b>عصير برتقال</b><span>برتقال فريش</span><div class="price">30 ج</div></div><button class="add" onclick="addItem('عصير برتقال',30)">أضف +</button></div>
+  <div class="item"><div class="emoji">🥛</div><div class="info"><b>ميلك شيك</b><span>ميلك شيك شوكولاتة</span><div class="price">50 ج</div></div><button class="add" onclick="addItem('ميلك شيك',50)">أضف +</button></div>
 </div>
 
 <div class="bottom-bar">
